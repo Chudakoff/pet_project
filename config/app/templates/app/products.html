@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'start' %}"> Base </a>
+<h1>
+    All products
+</h1>
+
+{% if products %}
+{% for product in products %}
+<div>
+    {{ product.name }}
+    {{ product.price }}
+    {{ product.type }}
+    {{ product.description }}
+
+</div>
+
+{% endfor %}
+{% else %}
+<h3>
+    Sorry, no products
+</h3>
+
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'start' %}"> Base </a>
+<h1>
+    Create products
+</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+    {{ form.as_div}}
+    <button type="submit">Send</button>
+</form>
+
+{% endblock content %}
